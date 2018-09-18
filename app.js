@@ -14,10 +14,6 @@ app.use(methodOverride("_method"));
 
 mongoose.connect("mongodb://localhost/restful-diary-app")
 
-app.listen(process.env.PORT, process.env.IP, function(){
-    console.log("server running")
-})
-
 var postSchema = new mongoose.Schema({
     title: String,
     body: String,
@@ -122,5 +118,6 @@ app.delete("/posts/:id", function(req, res) {
   })
 })
 
-
-var Post = mongoose.model('post', postSchema)
+app.listen(process.env.PORT, process.env.IP, function(){
+    console.log("server running")
+})
