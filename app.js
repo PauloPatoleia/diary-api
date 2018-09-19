@@ -12,7 +12,7 @@ app.use(methodOverride("_method"));
 
 // MONGOOSE CONFIG
 
-mongoose.connect("mongodb://localhost/restful-diary-app")
+mongoose.connect("mongodb+srv://vuka:q1RI46jxhOX0TN9c@cluster0-y9fgk.mongodb.net/test?retryWrites=true", { useNewUrlParser: true })
 
 var postSchema = new mongoose.Schema({
     title: String,
@@ -118,6 +118,6 @@ app.delete("/posts/:id", function(req, res) {
   })
 })
 
-app.listen(process.env.PORT, process.env.IP, function(){
+app.listen(process.env.PORT || 3000, process.env.IP, function(){
     console.log("server running")
 })
