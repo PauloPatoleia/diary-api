@@ -119,5 +119,5 @@ app.delete("/posts/:id", function(req, res) {
 })
 
 app.listen(process.env.PORT || 3000, process.env.IP, function(){
-    console.log("server running")
+    console.log("server running with no errors like vuka asked")
 })
